@@ -1,0 +1,8 @@
+/// <reference types="cypress" />
+
+describe('First test', () => {
+
+    it('visits base url', () => {
+        cy.visit('/login')
+})
+})
