@@ -10,7 +10,7 @@ describe('Invite and Remove a stakeholder', () => {
     cy.wait(5000);
   });
 
-  it.skip('invite a stakeholder in an idea', () => {
+  it('invite a stakeholder in an idea', () => {
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
     cy.get('[data-number="0"]').click();
     cy.get('.page-tabs__tabs__tab--name').contains('Risk').click();
@@ -21,14 +21,22 @@ describe('Invite and Remove a stakeholder', () => {
         cy.get('.add-stakeholder-button').click();
       }
     });
-    //cy.get('.idea__risk__main__wrapper')
-    //cy.wait(1000);
-    //cy.get('.idea__risk__main__wrapper');
-    // if (cy.get('.idea__risk__main__wrapper')) {
-    //   cy.get('.mt-5 > button.btn').click();
-    // } else {
-    //   cy.get('.add-stakeholder-button').click();
-    // }
+    cy.get('input.form-control').click();
+    cy.get('.section__suggestions > div > ul > li:nth-child(1)').click();
+    cy.get('div.status-dropdown > button').click();
+    cy.get('div.dropdown-menu.show > a:first-child').click();
+    cy.get('div.modal-footer > button:nth-child(2)').click();
+    cy.get('.add-stakeholder-button').click();
+    cy.get('input.form-control').click();
+    cy.get('.section__suggestions > div > ul > li:nth-child(1)').click();
+    cy.get('div.status-dropdown > button').click();
+    cy.get('div.dropdown-menu.show > a:first-child').click();
+    cy.get('div.modal-footer > button:nth-child(2)').click();
+    cy.get('.add-stakeholder-button').click();
+    cy.get('input.form-control').type(faker.internet.email());
+    cy.get('div.status-dropdown > button').click();
+    cy.get('div.dropdown-menu.show > a:nth-child(2)').click();
+    cy.get('div.modal-footer > button:nth-child(2)').click();
 
     cy.get('.react-select__input-container > input').click();
     cy.xpath(

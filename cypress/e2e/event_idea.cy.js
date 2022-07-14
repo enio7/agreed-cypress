@@ -14,7 +14,7 @@ describe('New event idea', () => {
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
     cy.get('.page-tabs__tabs__tab--name').contains('Events').click();
     cy.get(
-      '.events-list__body > div:nth-child(1) > div.event-item__content'
+      '.events-list__body > div:nth-child(1) > div.event-item > div > div:nth-child(2) > div > div > div > div.event-item__content'
     ).click();
     cy.get('.add-idea').click();
     cy.wait(1500);
@@ -34,7 +34,7 @@ describe('New event idea', () => {
       '.content__body > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > div > a:nth-child(2)'
     ).click();
     cy.get(
-      '.focused > .row > .leader > .leader__content > .dropdown > .btn > .avatar_icon > .avatar_icon__default'
+      'div.row.align-items-center > div.col.leader > div > div > button > div > div'
     ).click();
     cy.xpath(
       '//div[contains(@id, "react-select")][contains(@id, "option")][1]'
@@ -47,7 +47,7 @@ describe('New event idea', () => {
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
     cy.get('.page-tabs__tabs__tab--name').contains('Events').click();
     cy.get(
-      '.events-list__body > div:nth-child(1) > div.event-item__content'
+      '.events-list__body > div:nth-child(1) > div.event-item > div > div:nth-child(2) > div > div > div > div.event-item__content'
     ).click();
     cy.get('.idea-item:nth-child(1) > div > button.btn-link').click();
     cy.get('.dropdown-menu.show > a.dropdown-item').click();

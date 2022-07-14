@@ -22,26 +22,17 @@ describe('Idea Overview tab', () => {
     cy.get('.idea__details__container').click();
     cy.contains('Idea updated successfully!').should('exist');
     cy.get('.overview__values__container > a:nth-child(1)').click();
-    cy.url().should(
-      'include',
-      'workspaces/24/spaces/24/ideas/2244/value/positions'
-    );
+    cy.url().should('include', '/value/positions');
     cy.get('.page-tabs__tabs__tab--name').contains('Overview').click();
     cy.get('.overview__values__container > a:nth-child(2)').click();
-    cy.url().should(
-      'include',
-      'workspaces/24/spaces/24/ideas/2244/value/expenses'
-    );
+    cy.url().should('include', '/value/expenses');
     cy.get('.page-tabs__tabs__tab--name').contains('Overview').click();
     cy.get('.overview__values__container > a:nth-child(3)').click();
-    cy.url().should(
-      'include',
-      'workspaces/24/spaces/24/ideas/2244/value/revenue'
-    );
+    cy.url().should('include', '/value/revenue');
     cy.get('.page-tabs__tabs__tab--name').contains('Overview').click();
   });
 
-  it('team members', () => {
+  it.skip('team members', () => {
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
     cy.get('[data-number="0"]').click();
     cy.get('.addMember__button').click();

@@ -26,8 +26,12 @@ describe('Milestone', () => {
       'tr:last-child > td:nth-child(3) > div > div > div > div > div > input'
     ).click();
     cy.get('div[aria-label="Choose Saturday, July 30th, 2022"]').click();
-    cy.get('tr:last-child > td:nth-child(4) > div > div > div > input').click();
-    cy.get('.dropdown-position > div:first-child').click();
+    cy.get(
+      'tr:last-child > td:nth-child(4) > div > div > div:nth-child(2)'
+    ).type('enio');
+    cy.get(
+      ':nth-child(1) > .option-item__content > .avatar-round > .text-container > h4'
+    ).click();
     cy.get(
       'tr:last-child > td:nth-child(5) > div > div > div > div > button'
     ).click();

@@ -26,7 +26,7 @@ describe('Add a event', () => {
     cy.get('.spaces-page').click();
     cy.get('.form-group:nth-child(4) > div:nth-child(2) > div > input').click();
     cy.get('[aria-label="Next Month"]').click();
-    cy.get('div[aria-label="Choose Saturday, July 30th, 2022"]').click();
+    cy.get('div[aria-label="Choose Wednesday, August 31st, 2022"]').click();
     cy.get('[placeholder="Select Time"]').type('12:00 PM');
     cy.get('.spaces-page').click();
     cy.get('[name="meetingLink"]').type(faker.address.streetAddress());
@@ -59,7 +59,7 @@ describe('Add a event', () => {
     cy.get('.spaces-page').click();
     cy.get('.form-group:nth-child(4) > div:nth-child(2) > div > input').click();
     cy.get('[aria-label="Next Month"]').click();
-    cy.get('div[aria-label="Choose Saturday, July 30th, 2022"]').click();
+    cy.get('div[aria-label="Choose Wednesday, August 31st, 2022"]').click();
     cy.get('[placeholder="Select Time"]').type('12:00 PM');
     cy.get('.spaces-page').click();
     cy.get('[name="meetingLink"]').type(faker.address.streetAddress());
@@ -94,7 +94,7 @@ describe('Add a event', () => {
     cy.get('.spaces-page').click();
     cy.get('.form-group:nth-child(4) > div:nth-child(2) > div > input').click();
     cy.get('[aria-label="Next Month"]').click();
-    cy.get('div[aria-label="Choose Saturday, July 30th, 2022"]').click();
+    cy.get('div[aria-label="Choose Wednesday, August 31st, 2022"]').click();
     cy.get('[placeholder="Select Time"]').type('12:00 PM');
     cy.get('.spaces-page').click();
     cy.get('[name="meetingLink"]').type(faker.address.streetAddress());

@@ -10,7 +10,7 @@ describe('Idea values', () => {
     cy.wait(5000);
   });
 
-  it('creating idea for value idea testing', () => {
+  it.skip('creating idea for value idea testing', () => {
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
     cy.xpath('//div[@class="add-new-items-dropdown dropdown"]/button').click();
     cy.get(
@@ -60,7 +60,9 @@ describe('Idea values', () => {
       .click();
     cy.get('[aria-label="Next Month"]').click();
     cy.get('div[aria-label="Choose Saturday, August 27th, 2022"]').click();
-    cy.get('[data-rownumber] > td:nth-child(6) > div > div > div > div > input')
+    cy.get(
+      '[data-rownumber] > td:nth-child(6) > div > div > div > div > p.placeholder-text'
+    )
       .last()
       .type('enio');
     cy.get('.dropdown-position > div:nth-child(1)').click();
@@ -80,7 +82,7 @@ describe('Idea values', () => {
     cy.get('.modal-footer > button:nth-child(2)').click();
   });
 
-  it('non-personnel value & archive', () => {
+  it.skip('non-personnel value & archive', () => {
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
     cy.get('[data-number="0"]').click();
     cy.get('.page-tabs__tabs__tab--name').contains('Value').click();
@@ -132,7 +134,7 @@ describe('Idea values', () => {
     cy.get('.modal-footer > button:nth-child(2)').click();
   });
 
-  it('revenues value & archive', () => {
+  it.skip('revenues value & archive', () => {
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
     cy.get('[data-number="0"]').click();
     cy.get('.page-tabs__tabs__tab--name').contains('Value').click();
