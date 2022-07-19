@@ -27,8 +27,11 @@ describe('Milestone', () => {
     ).click();
     cy.get('div[aria-label="Choose Saturday, July 30th, 2022"]').click();
     cy.get(
-      'tr:last-child > td:nth-child(4) > div > div > div:nth-child(2)'
-    ).type('enio');
+      'tr:last-child > td:nth-child(4) > div > div > div.validator-avatar'
+    ).trigger('mouseover');
+    cy.get(
+      'tr:last-child > td:nth-child(4) > div > div > div.email-dropdown-wrapper'
+    ).invoke('show');
     cy.get(
       ':nth-child(1) > .option-item__content > .avatar-round > .text-container > h4'
     ).click();

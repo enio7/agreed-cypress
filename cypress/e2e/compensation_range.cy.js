@@ -59,5 +59,7 @@ describe('Compensation Range', () => {
       '[role="rowgroup"] > tr[data-rownumber="4"] > td:last-child > div > div > button'
     ).click();
     cy.get('.dropdown-menu.show > a').click();
+
+    cy.get('.form-check-input').click();
   });
 });

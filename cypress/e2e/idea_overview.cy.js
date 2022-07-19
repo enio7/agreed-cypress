@@ -32,7 +32,7 @@ describe('Idea Overview tab', () => {
     cy.get('.page-tabs__tabs__tab--name').contains('Overview').click();
   });
 
-  it.skip('team members', () => {
+  it('team members', () => {
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
     cy.get('[data-number="0"]').click();
     cy.get('.addMember__button').click();
