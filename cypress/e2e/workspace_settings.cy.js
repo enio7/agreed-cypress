@@ -29,19 +29,23 @@ describe('Worksapce settings', () => {
     cy.contains('Workspace successfully updated!').should('exist');
     cy.get('.pull__section-up > form > div > div:nth-child(2) > div > input')
       .clear()
-      .type(faker.lorem.sentences());
+      .type(faker.lorem.words());
     cy.get(
       'div.edit-section.pull__section-up > form > div > div.text-muted.card-footer > button.mr-4.btn.btn-secondary'
     ).click();
     cy.get('.pull__section-up > form > div > div:nth-child(2) > div > input')
       .clear()
-      .type(faker.lorem.sentences());
+      .type(faker.lorem.words());
     cy.get(
       'div.edit-section.pull__section-up > form > div > div.text-muted.card-footer > button.btn.btn-primary'
     ).click();
     cy.get('.card-delete-body > div:nth-child(2) > button').click();
+    cy.get('.confirm-input-container > label > b').then(($temp) => {
+      const text = $temp.text();
+      cy.get('input[type="text"]').type(`${text}`);
+    });
     cy.get('.modal-footer > button:nth-child(2)').click();
-    cy.contains('View your Workspace(s)').should('exist');
+    cy.contains('View your Workspace(s)').should('be.visible');
   });
 
   it('edit welcome banner', () => {

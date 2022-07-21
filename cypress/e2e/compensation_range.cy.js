@@ -19,7 +19,7 @@ describe('Compensation Range', () => {
     cy.contains('Compensation Range').should('exist');
     cy.get('.form-check-input').click();
     cy.get('.modal-footer > button:nth-child(2)').click();
-    cy.get('.compensation-range-header-add-button').click();
+    cy.get('.compensation-range-header-add-button').click().wait(1000);
     cy.get(
       '[data-rownumber="0"] > td:first-child > div > div > button'
     ).click();

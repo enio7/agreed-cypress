@@ -10,7 +10,7 @@ describe('Draft Invities', () => {
     cy.wait(5000);
   });
 
-  it('draft invites through idea overview', () => {
+  it.skip('draft invites through idea overview', () => {
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
     cy.get('[data-number="0"]').click();
     cy.get('.addMember__button').click();

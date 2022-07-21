@@ -13,8 +13,8 @@ describe('Inviting a new member to workspace', () => {
   it('inviting a member to workspace through homepage', () => {
     cy.xpath('//div[@class="season-dropdown dropdown"]/button').click();
     cy.get('.dropdown-menu.show > a:nth-child(2)').click();
-    cy.xpath(
-      '//div[@class="d-flex flex-column"]/div/p[contains(., "Invite to Workspace")]'
+    cy.get(
+      'div > div.col-12 > div.row > div:nth-child(2) > div.row > div > div:nth-child(1)'
     ).click();
     cy.xpath('//input[contains(@id, "react-select")][contains(@id, "input")]')
       .type(faker.internet.email())
