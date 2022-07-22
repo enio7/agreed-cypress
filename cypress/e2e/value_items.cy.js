@@ -10,7 +10,7 @@ describe('Idea values', () => {
     cy.wait(5000);
   });
 
-  it.skip('creating idea for value idea testing', () => {
+  it('creating idea for value idea testing', () => {
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
     cy.xpath('//div[@class="add-new-items-dropdown dropdown"]/button').click();
     cy.get(
