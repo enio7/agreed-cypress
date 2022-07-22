@@ -49,7 +49,7 @@ describe('Idea values', () => {
     cy.get('[data-rownumber] > td:nth-child(3) > div > div > button')
       .last()
       .click();
-    cy.get('.overlay-dropdown-filter > div > div:nth-child(7)').click();
+    cy.get('.overlay-dropdown-filter > div > div:nth-child(3)').click();
     cy.get('[data-rownumber] > td:nth-child(4) > div > div > div > input')
       .last()
       .type('1');
@@ -61,12 +61,12 @@ describe('Idea values', () => {
     cy.get('[aria-label="Next Month"]').click();
     cy.get('div[aria-label="Choose Saturday, August 27th, 2022"]').click();
     cy.get(
-      '[data-rownumber] > td:nth-child(6) > div > div > div > div > p.placeholder-text'
+      '[role="rowgroup"] > tr:last-child > td:nth-child(6) > div > div > div > div.email-dropdown-wrapper > div > input'
     )
-      .last()
-      .type('enio');
-    cy.get('.dropdown-position > div:nth-child(1)').click();
-    cy.wait(3000);
+      .invoke('show')
+      .click({ force: true });
+    cy.get('.section__body > ul > li:nth-child(3)').click();
+    cy.wait(2000);
     cy.get('[data-rownumber] > td:nth-child(7) > div > div > div')
       .last()
       .click();
