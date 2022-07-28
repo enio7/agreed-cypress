@@ -10,7 +10,7 @@ describe('Idea values', () => {
     cy.wait(5000);
   });
 
-  it('creating idea for value idea testing', () => {
+  it.skip('creating idea for value idea testing', () => {
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
     cy.xpath('//div[@class="add-new-items-dropdown dropdown"]/button').click();
     cy.get(
@@ -66,13 +66,14 @@ describe('Idea values', () => {
       .invoke('show')
       .click({ force: true });
     cy.get('.section__body > ul > li:nth-child(3)').click();
-    cy.wait(2000);
+    cy.wait(1000);
+    cy.get('.modal-footer > button:nth-child(2)').click();
     cy.get('[data-rownumber] > td:nth-child(7) > div > div > div')
       .last()
       .click();
-    cy.get('[data-rownumber] > td:nth-child(8) > div > div > div > div')
-      .last()
-      .click();
+    cy.get(
+      '[data-rownumber] > td:nth-child(8) > div > div > div > div'
+    ).click();
     cy.get('.minimenu > div:nth-child(3)').click();
     cy.get('.modal-footer > button:nth-child(1)').click();
     cy.get('[data-rownumber] > td:nth-child(8) > div > div > div > div')
@@ -80,6 +81,7 @@ describe('Idea values', () => {
       .click();
     cy.get('.minimenu > div:nth-child(3)').click();
     cy.get('.modal-footer > button:nth-child(2)').click();
+    cy.wait(500);
   });
 
   it.skip('non-personnel value & archive', () => {
@@ -118,7 +120,8 @@ describe('Idea values', () => {
       .last()
       .type('enio');
     cy.get('.dropdown-position > div:nth-child(1)').click();
-    cy.wait(3000);
+    cy.wait(1000);
+    cy.get('.modal-footer > button:nth-child(2)').click();
     cy.get('[data-rownumber] > td:nth-child(8) > div > div > div')
       .last()
       .click();
@@ -179,6 +182,7 @@ describe('Idea values', () => {
       .type('enio');
     cy.get('.dropdown-position > div:nth-child(1)').click();
     cy.wait(2000);
+    cy.get('.modal-footer > button:nth-child(1)').click();
     cy.get('[data-rownumber] > td:nth-child(9) > div > div > div')
       .last()
       .click();

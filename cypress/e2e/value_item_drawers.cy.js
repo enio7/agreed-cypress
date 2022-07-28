@@ -35,29 +35,33 @@ describe('Idea value drawers', () => {
       '.itemDrawerValueDetais__continer > div:nth-child(3) > div > button'
     ).click();
     cy.get(
-      '.itemDrawerValueDetais__continer > div:nth-child(3) > div > div.dropdown-menu > a:nth-child(5)'
+      '.itemDrawerValueDetais__continer > div:nth-child(3) > div > div.dropdown-menu > a:nth-child(2)'
     ).click();
     cy.get(
       '.itemDrawerValueDetais__continer > div:nth-child(4) > div > input[name="estimatedNumberOfUnits"]'
     ).type('1');
     cy.get(
       '.itemDrawerValueDetais__continer > div:nth-child(5) > div.calendar-cell > div > div > div > div > div > div > div > div:nth-child(1) > input'
-    ).click();
+    )
+      .clear()
+      .click();
     cy.get('[aria-label="Next Month"]').click();
-    cy.get('div[aria-label="Choose Saturday, August 27th, 2022"]').click();
+    cy.get(
+      '.react-datepicker__month > div.react-datepicker__week:nth-child(3) > div:nth-child(4)'
+    ).click();
     cy.wait(1000);
     cy.get('.base-button-tabs > div:nth-child(2) > button').click();
-    cy.get(
-      '.react-select__value-container > div > input.react-select__input'
-    ).click();
-    cy.xpath(
-      '//div[contains(@id, "react-select")][contains(@id, "option")][1]'
-    ).click();
+    cy.get('.react-select__input-container > input')
+      .type(faker.internet.email())
+      .type('{enter}');
+    cy.get('#dropdown-basic').click();
+    cy.get('.dropdown-menu.show > a:first-child').click();
+    cy.wait(1000);
 
     const attach = 'pdf.pdf';
     cy.get('.drap-n-drop > input').attachFile(attach);
 
-    cy.get('div:nth-child(2) > textarea').type(faker.lorem.paragraph());
+    cy.get('div:nth-child(2) > textarea').clear().type(faker.lorem.paragraph());
     cy.get('.base-button-tabs > div:nth-child(1) > button').click();
     cy.get('.closeBtn__container > div').click();
     cy.contains('Idea value item updated successfully!').should('exist');
@@ -91,22 +95,25 @@ describe('Idea value drawers', () => {
     ).click();
     cy.get(
       '.itemDrawerValueDetais__continer > div:nth-child(5) > div.calendar-cell > div > div > div > div > div > div > div > div:nth-child(1) > input'
-    ).click();
+    )
+      .clear()
+      .click();
     cy.get('[aria-label="Next Month"]').click();
-    cy.get('div[aria-label="Choose Saturday, August 27th, 2022"]').click();
+    cy.get(
+      '.react-datepicker__month > div.react-datepicker__week:nth-child(3) > div:nth-child(4)'
+    ).click();
     cy.wait(1000);
     cy.get('.base-button-tabs > div:nth-child(2) > button').click();
-    cy.get(
-      '.react-select__value-container > div > input.react-select__input'
-    ).click();
-    cy.xpath(
-      '//div[contains(@id, "react-select")][contains(@id, "option")][1]'
-    ).click();
+    cy.get('.react-select__input-container > input')
+      .type(faker.internet.email())
+      .type('{enter}');
+    cy.get('#dropdown-basic').click();
+    cy.get('.dropdown-menu.show > a:first-child').click();
 
     const attach = 'pdf.pdf';
     cy.get('.drap-n-drop > input').attachFile(attach);
 
-    cy.get('div:nth-child(2) > textarea').type(faker.lorem.paragraph());
+    cy.get('div:nth-child(2) > textarea').clear().type(faker.lorem.paragraph());
     cy.get('.base-button-tabs > div:nth-child(1) > button').click();
     cy.get('.closeBtn__container > div').click();
     cy.contains('Idea value item updated successfully!').should('exist');
@@ -143,25 +150,32 @@ describe('Idea value drawers', () => {
     ).type('22222');
     cy.get(
       '.itemDrawerValueDetais__continer > div:nth-child(6) > div.calendar-cell > div > div:nth-child(1) > div > div > div > div > div > div:nth-child(1) > input'
-    ).click();
+    )
+      .clear()
+      .click();
     cy.get('[aria-label="Next Month"]').click();
-    cy.get('div[aria-label="Choose Saturday, August 27th, 2022"]').click();
+    cy.get(
+      '.react-datepicker__month > div.react-datepicker__week:nth-child(3) > div:nth-child(4)'
+    ).click();
     cy.get(
       '.itemDrawerValueDetais__continer > div:nth-child(6) > div.calendar-cell > div > div:nth-child(2) > div > div > div > div > div > div:nth-child(1) > input'
-    ).click();
-    cy.get('div[aria-label="Choose Tuesday, August 30th, 2022"]').click();
-    cy.get('.base-button-tabs > div:nth-child(2) > button').click();
+    )
+      .clear()
+      .click();
     cy.get(
-      '.react-select__value-container > div > input.react-select__input'
+      '.react-datepicker__month > div.react-datepicker__week:nth-child(3) > div:nth-child(4)'
     ).click();
-    cy.xpath(
-      '//div[contains(@id, "react-select")][contains(@id, "option")][1]'
-    ).click();
+    cy.get('.base-button-tabs > div:nth-child(2) > button').click();
+    cy.get('.react-select__input-container > input')
+      .type(faker.internet.email())
+      .type('{enter}');
+    cy.get('#dropdown-basic').click();
+    cy.get('.dropdown-menu.show > a:first-child').click();
 
     const attach = 'pdf.pdf';
     cy.get('.drap-n-drop > input').attachFile(attach);
 
-    cy.get('div:nth-child(2) > textarea').type(faker.lorem.paragraph());
+    cy.get('div:nth-child(2) > textarea').clear().type(faker.lorem.paragraph());
     cy.get('.base-button-tabs > div:nth-child(1) > button').click();
     cy.get('.closeBtn__container > div').click();
     cy.contains('Idea value item updated successfully!').should('exist');
