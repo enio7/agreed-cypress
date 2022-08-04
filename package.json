@@ -10,11 +10,13 @@
   "license": "ISC",
   "dependencies": {
     "cypress-file-upload": "^5.0.8",
+    "cypress-xpath": "^2.0.1",
     "express": "^4.18.1",
     "faker": "^5.5.3",
     "x-path": "^0.0.2"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.3.0",
     "cypress": "^10.3.0"
   }
 }

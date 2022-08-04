@@ -29,7 +29,7 @@ describe('Idea values', () => {
       .click();
   });
 
-  it('personnel value & archive', () => {
+  it.skip('personnel value & archive', () => {
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
     cy.get('[data-number="0"]').click();
     cy.get('.page-tabs__tabs__tab--name').contains('Value').click();
