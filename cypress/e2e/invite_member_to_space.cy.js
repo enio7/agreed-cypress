@@ -17,12 +17,11 @@ describe('Inviting a new member', () => {
       'div > div.col-12 > div.row > div:nth-child(2) > div.row > div > div:nth-child(2)'
     ).click();
     cy.get(
-      '.search-space > div > div > div:nth-of-type(1) > div:nth-of-type(2)'
-    ).click();
+      '.spaceSelector-component-container > div > div > div > div.react-select__placeholder'
+    ).click({force: true});
     cy.xpath(
       '//div[contains(@id, "react-select")][contains(@id, "option")][1]'
     ).click();
-    cy.get('.next-button').click();
     cy.xpath('//input[contains(@id, "react-select")][contains(@id, "input")]')
       .type(faker.internet.email())
       .type('{enter}');

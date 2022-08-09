@@ -26,9 +26,9 @@ describe('Value items wizard', () => {
     cy.get('.nextBtn').click();
     cy.get('.input__container > input').type('2');
     cy.get('.nextBtn').click();
-    cy.get('input[name="estimatedNumberOfUnits"]').click();
+    cy.get('.react-datepicker__input-container > input').click();
     cy.get('[aria-label="Next Month"]').click();
-    cy.get('div[aria-label="Choose Saturday, August 27th, 2022"]').click();
+    cy.get('.react-datepicker__month > div:nth-child(3) > div:nth-child(2)').click();
     cy.get('.nextBtn').click();
     cy.get('.react-select__input').click();
     cy.get('.react-select__menu-list > div:nth-child(2)').click();
@@ -52,9 +52,9 @@ describe('Value items wizard', () => {
     cy.get('.nextBtn').click();
     cy.get('[placeholder="eg. 20,000"]').type('400000');
     cy.get('.nextBtn').click();
-    cy.get('input[name="estimatedNumberOfUnits"]').click();
+    cy.get('.react-datepicker__input-container > input').click();
     cy.get('[aria-label="Next Month"]').click();
-    cy.get('div[aria-label="Choose Saturday, August 27th, 2022"]').click();
+    cy.get('.react-datepicker__month > div:nth-child(3) > div:nth-child(2)').click();
     cy.get('.nextBtn').click();
     cy.get('.react-select__input').type(faker.internet.email()).type('{enter}');
     //cy.get('.react-select__menu-list > div:nth-child(2)').click();

@@ -18,9 +18,9 @@ describe('Create new Workspace', () => {
     cy.get('.create-workspace-submiter').click();
     cy.get('.react-select__input').type(faker.internet.email()).type('{enter}');
     cy.get('#dropdown-basic').click();
-    cy.get('div.dropdown-menu.show > a:nth-child(3)')
+    cy.get('div.dropdown-menu.show > a:nth-child(2)')
       .click()
-      .should('contain', 'Guest');
+      .should('contain', 'User');
     cy.get('.addAnotherUserBtn-extras').click();
     cy.xpath(
       '//div[@class="selector-wrapper false"]/div[last()]/section/div/div/div/div[2]/input'

@@ -31,15 +31,15 @@ describe('Create a new idea', () => {
     cy.contains('Idea created successfully!').should('exist');
   });
 
-  it.skip('add a new idea through homepage', () => {
+  it('add a new idea through homepage', () => {
     cy.xpath('//p[@class="mb-0"][contains(., "Add New Idea")]').click();
     cy.get(
-      '.search-space > .search-space > div > div > div:nth-of-type(1) > div:nth-of-type(2)'
+      'div.react-select__input-container > input'
     ).click();
     cy.xpath(
       '//div[contains(@id,"react-select")][contains(@id,"option")][1]'
     ).click();
-    cy.get('.next-button').click();
+    cy.get('.submitBtn').click();
     cy.xpath('//input[@placeholder="Add a Handle (optional)"]').type(
       'Automated Test'
     );
@@ -54,7 +54,7 @@ describe('Create a new idea', () => {
     cy.contains('Idea created successfully!').should('exist');
   });
 
-  it.skip('idea is created', () => {
+  it('idea is created', () => {
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
     cy.get('[data-number="0"] > .idea-card')
       .should('contain', 'Automated Test')

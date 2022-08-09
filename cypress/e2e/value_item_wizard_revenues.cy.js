@@ -27,15 +27,15 @@ describe('Value items Revenues', () => {
     cy.get('.form-control').type('20000');
     cy.get('.nextBtn').click();
     cy.get(
-      '.row > div:nth-child(1) > div > div > div > div > div > div > input'
+      'div:nth-child(1) > div > div > div > div > input'
     ).click();
     cy.get('[aria-label="Next Month"]').click();
-    cy.get('div[aria-label="Choose Saturday, August 27th, 2022"]').click();
+    cy.get('.react-datepicker__month > div:nth-child(3) > div:nth-child(2)').click();
     cy.get(
-      '.row > div:nth-child(2) > div > div > div > div > div > div > input'
+      'div:nth-child(2) > div > div > div > div > input'
     ).click();
     cy.get('[aria-label="Next Month"]').click();
-    cy.get('div[aria-label="Choose Tuesday, August 30th, 2022"]').click();
+    cy.get('.react-datepicker__month > div:nth-child(3) > div:nth-child(2)').click();
     cy.get('.nextBtn').click();
     cy.get('.wizard__footer__wrapper > button:nth-child(1)').click();
     cy.get('.nextBtn').click();

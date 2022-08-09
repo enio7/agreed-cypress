@@ -24,9 +24,9 @@ describe('Add a event', () => {
       '.members-dropdown > div > div > div:nth-child(2) > div.react-select__multi-value__remove'
     ).click();
     cy.get('.spaces-page').click();
-    cy.get('.form-group:nth-child(4) > div:nth-child(2) > div > input').click();
+    cy.get('.form-group:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div > div > input').click();
     cy.get('[aria-label="Next Month"]').click();
-    cy.get('div[aria-label="Choose Wednesday, August 31st, 2022"]').click();
+    cy.get('.react-datepicker__month > div:nth-child(4) > div:nth-child(3)').click();
     cy.get('[placeholder="Select Time"]').type('12:00 PM');
     cy.get('.spaces-page').click();
     cy.get('[name="meetingLink"]').type(faker.address.streetAddress());
@@ -57,9 +57,9 @@ describe('Add a event', () => {
       '.members-dropdown > div > div > div:nth-child(2) > div.react-select__multi-value__remove'
     ).click();
     cy.get('.spaces-page').click();
-    cy.get('.form-group:nth-child(4) > div:nth-child(2) > div > input').click();
+    cy.get('.form-group:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div > div > input').click();
     cy.get('[aria-label="Next Month"]').click();
-    cy.get('div[aria-label="Choose Wednesday, August 31st, 2022"]').click();
+    cy.get('.react-datepicker__month > div:nth-child(4) > div:nth-child(3)').click();
     cy.get('[placeholder="Select Time"]').type('12:00 PM');
     cy.get('.spaces-page').click();
     cy.get('[name="meetingLink"]').type(faker.address.streetAddress());
@@ -81,7 +81,7 @@ describe('Add a event', () => {
     cy.xpath(
       '//div[contains(@id, "react-select")][contains(@id, "option")][1]'
     ).click();
-    cy.get('.next-button').click();
+    cy.get('.submitBtn').click();
     cy.get('#formTopic').type(faker.address.city());
     cy.get('.hostings-dropdown > div > div > div > input').click();
     cy.get('.react-select__option:nth-child(1)').click();
@@ -92,9 +92,9 @@ describe('Add a event', () => {
       '.members-dropdown > div > div > div:nth-child(2) > div.react-select__multi-value__remove'
     ).click();
     cy.get('.spaces-page').click();
-    cy.get('.form-group:nth-child(4) > div:nth-child(2) > div > input').click();
+    cy.get('.form-group:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div > div > input').click();
     cy.get('[aria-label="Next Month"]').click();
-    cy.get('div[aria-label="Choose Wednesday, August 31st, 2022"]').click();
+    cy.get('.react-datepicker__month > div:nth-child(4) > div:nth-child(3)').click();
     cy.get('[placeholder="Select Time"]').type('12:00 PM');
     cy.get('.spaces-page').click();
     cy.get('[name="meetingLink"]').type(faker.address.streetAddress());

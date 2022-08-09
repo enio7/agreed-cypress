@@ -10,7 +10,7 @@ describe('Global Search', () => {
         cy.wait(5000)
     })
 
-    it.skip('global-search ideas', () => {
+    it('global-search ideas', () => {
         cy.get('.navbar-search__form').click()
         cy.get('.navbar-search__input').type('test').type('{enter}')
         cy.get('.page-tabs__tabs > a:nth-child(1)').should('contain', 'Ideas')
@@ -38,6 +38,7 @@ describe('Global Search', () => {
         cy.get('.list-unstyled > li:nth-child(1)').click()
         cy.get('.option-item__content > svg').click()
         cy.get('.ideas__filters__container > div > div:nth-child(4)').click()
+        cy.wait(1000)
         //value filter
         cy.get('.ideas__filters__container > div > div:nth-child(5)').click()
         cy.get('.agreed-range-selector-input-values > div:last-child').clear().type('100000')
@@ -55,7 +56,7 @@ describe('Global Search', () => {
         //most-relevant filter - filters by title or description?
     })
 
-    it.skip('global-search events', () => {
+    it('global-search events', () => {
         cy.get('.navbar-search__form').click()
         cy.get('.navbar-search__input').type('e').type('{enter}')
         cy.get('.page-tabs__tabs > a:nth-child(2)').should('contain', 'Events').click()
@@ -87,7 +88,7 @@ describe('Global Search', () => {
         cy.get('.filters__container > label').click()
     })
 
-    it.skip('global-search spaces', () => {
+    it('global-search spaces', () => {
         cy.get('.navbar-search__form').click()
         cy.get('.navbar-search__input').type('e').type('{enter}')
         cy.get('.page-tabs__tabs > a:nth-child(3)').should('contain', 'Spaces').click()
@@ -114,6 +115,7 @@ describe('Global Search', () => {
         cy.get('.page-tabs__tabs > a:nth-child(4)').should('contain', 'Files').click()
         //people filter
         cy.get('.files__filters__container > div > div:nth-child(1)').click()
+        cy.wait(1500)
         cy.get('.list-unstyled > li:nth-child(1)').click()
         cy.get('.files__filters__container > div > div:nth-child(1)').click()
         //spaces filter
@@ -148,7 +150,7 @@ describe('Global Search', () => {
         cy.get('div.globalSearch__container > div:nth-child(5) > div > a > button').click()
     })
 
-    it('global-space members', () => {
+    it.skip('global-space members', () => {
         cy.get('.navbar-search__form').click()
         cy.get('.navbar-search__input').type('e').type('{enter}')
         cy.get('.page-tabs__tabs > a:nth-child(5)').should('contain', 'Members').click()

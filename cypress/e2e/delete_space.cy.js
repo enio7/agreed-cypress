@@ -27,7 +27,7 @@ describe('Delete a space', () => {
     cy.xpath(
       '//div[@class="dropdown-menu show dropdown-menu-end"]/a[4]/div'
     ).click();
-    cy.xpath('//button[@class="change__color btn btn-secondary"]').click();
+    cy.get('.leaveBtn').click();
     cy.contains('Space successfully deleted!').should('exist');
   });
 
@@ -40,7 +40,7 @@ describe('Delete a space', () => {
     cy.get('.card-delete-body__right > .btn').click();
     cy.get('.modal-footer > :nth-child(1)').click();
     cy.get('.card-delete-body__right > .btn').click();
-    cy.get('.change__color').click();
+    cy.get('.leaveBtn').click();
     cy.contains('Space successfully deleted!').should('be.visible');
   });
 });

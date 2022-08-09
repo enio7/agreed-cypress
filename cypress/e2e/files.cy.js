@@ -23,7 +23,7 @@ describe('Files upload', () => {
       '.attachments-list > div:nth-child(2) > div > div > div > div.align-items-center > svg'
     ).click();
     cy.get('.modal-footer > button').click();
-
+      cy.reload()
     //file actions
     cy.get(
       'div.row.w-100 > div:last-child > div > div.d-flex.align-items-center > div'

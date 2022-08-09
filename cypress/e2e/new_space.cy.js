@@ -17,15 +17,15 @@ describe('Create new spaces', () => {
       .click;
     cy.visit('/workspaces/24/space/new');
 
-    cy.get('[placeholder="Space Name"]').type(faker.company.companyName());
-    cy.get('[placeholder="Add Description (optional)"]').type(
+    cy.get('[placeholder="Ex. Marketing"]').type(faker.company.companyName());
+    cy.get('[placeholder="Add Description"]').type(
       faker.lorem.sentences()
     );
     cy.get('.react-select__input').type(faker.internet.email()).type('{enter}');
     cy.get('#dropdown-basic').click();
-    cy.get('div.dropdown-menu.show > a:nth-child(3)')
+    cy.get('div.dropdown-menu.show > a:nth-child(2)')
       .click()
-      .should('contain', 'Guest');
+      .should('contain', 'User');
     cy.get('.addAnotherUserBtn-extras').click();
     cy.xpath(
       '//div[@class="selector-wrapper false"]/div[last()]/section/div/div/div/div[2]/input'
@@ -35,12 +35,12 @@ describe('Create new spaces', () => {
     cy.get(
       '.selector-wrapper > div:nth-child(2) >section > div:nth-child(2) > button'
     ).click();
-    cy.get('div.dropdown-menu.show > a:nth-child(2)')
+    cy.get('div.dropdown-menu.show > a:nth-child(1)')
       .click()
-      .should('contain', 'User');
+      .should('contain', 'Admin');
     cy.get('#privacy-private-input').click();
     cy.get('#privacy-public-input').click();
-    cy.get('.section-footer').should('contain', 'Create Space').click();
+    cy.get('section.section-footer > button').click();
 
     cy.get('.space-title').should('be.visible');
   });
@@ -54,15 +54,15 @@ describe('Create new spaces', () => {
       '[href="/admin/spaces"] > .page-tabs__tabs__tab > .page-tabs__tabs__tab--name'
     ).click();
     cy.get('.add-new-members').click();
-    cy.get('[placeholder="Space Name"]').type(faker.company.companyName());
-    cy.get('[placeholder="Add Description (optional)"]').type(
+    cy.get('[placeholder="Ex. Marketing"]').type(faker.company.companyName());
+    cy.get('[placeholder="Add Description"]').type(
       faker.lorem.sentences()
     );
     cy.get('.react-select__input').type(faker.internet.email()).type('{enter}');
     cy.get('#dropdown-basic').click();
-    cy.get('div.dropdown-menu.show > a:nth-child(3)')
+    cy.get('div.dropdown-menu.show > a:nth-child(2)')
       .click()
-      .should('contain', 'Guest');
+      .should('contain', 'User');
     cy.get('.addAnotherUserBtn-extras').click();
     cy.xpath(
       '//div[@class="selector-wrapper false"]/div[last()]/section/div/div/div/div[2]/input'
@@ -72,12 +72,12 @@ describe('Create new spaces', () => {
     cy.get(
       '.selector-wrapper > div:nth-child(2) >section > div:nth-child(2) > button'
     ).click();
-    cy.get('div.dropdown-menu.show > a:nth-child(2)')
+    cy.get('div.dropdown-menu.show > a:nth-child(1)')
       .click()
-      .should('contain', 'User');
+      .should('contain', 'Admin');
     cy.get('#privacy-secret-input').click();
     cy.get('#privacy-public-input').click();
-    cy.get('.section-footer').should('contain', 'Create Space').click();
+    cy.get('section.section-footer > button').click();
 
     cy.get('.space-title').should('be.visible');
   });

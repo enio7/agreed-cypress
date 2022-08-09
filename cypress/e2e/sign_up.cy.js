@@ -6,7 +6,7 @@ const faker = require("faker");
 
 
 describe("Authorization Modal", () => {
-    it('Sign Up', () => {
+    it.skip('Sign Up', () => {
         cy.visit('/signup')
 
         cy.xpath('//input[@name="email"]').type(faker.internet.email())

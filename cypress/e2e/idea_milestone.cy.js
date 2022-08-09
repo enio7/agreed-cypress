@@ -14,18 +14,18 @@ describe('Milestone', () => {
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
     cy.get('[data-number="0"]').click();
     cy.get('.page-tabs__tabs__tab--name').contains('Plan').click();
-    // cy.get('.addMetricBtn').click();
-    // cy.wait(1500);
-    // cy.get(
-    //   '[role="rowgroup"] > tr:last-child > td:nth-child(1) > div > textarea'
-    // ).type('milestone title automated');
-    // cy.get(
-    //   '[role="rowgroup"] > tr:last-child > td:nth-child(2) > div > textarea'
-    // ).type(faker.lorem.words());
-    // cy.get(
-    //   'tr:last-child > td:nth-child(3) > div > div > div > div > div > input'
-    // ).click();
-    // cy.get('div[aria-label="Choose Saturday, July 30th, 2022"]').click();
+    cy.get('.addMetricBtn').click();
+    cy.wait(1500);
+    cy.get(
+      '[role="rowgroup"] > tr:last-child > td:nth-child(1) > div > textarea'
+    ).type('milestone title automated');
+    cy.get(
+      '[role="rowgroup"] > tr:last-child > td:nth-child(2) > div > textarea'
+    ).type(faker.lorem.words());
+    cy.get(
+      'tr:last-child > td:nth-child(3) > div > div > div > div > div > input'
+    ).click();
+    cy.get('.react-datepicker__month > div:nth-child(4) > div:nth-child(4)').click();
     cy.get(
       '[role="rowgroup"] > tr:last-child > td:nth-child(4) > div > div > div.email-dropdown-wrapper > div > input'
     )
@@ -33,7 +33,7 @@ describe('Milestone', () => {
       .click({ force: true });
     cy.get(
       '[role="rowgroup"] > tr:last-child > td:nth-child(4) > div > div > div.email-dropdown-wrapper > div > input'
-    ).type(faker.internet.email());
+    ).type(faker.internet.email()).type('{enter}');
     cy.get('.modal-footer > button:last-child').click();
     cy.contains('Validator successfully updated!').should('exist');
     cy.reload();

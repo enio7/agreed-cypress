@@ -69,5 +69,6 @@ describe('Idea Overview tab', () => {
     cy.get('.dropdown-menu.show > a:nth-child(1)').click();
     cy.get('.modal-footer > button:nth-child(2)').click();
     cy.contains('Team successfully invited!').should('be.visible');
+    //to be continued...
   });
 });
