@@ -10,7 +10,7 @@ describe('Inviting a new member', () => {
     cy.wait(5000);
   });
 
-  it('inviting a new member through homepage', () => {
+  it.skip('inviting a new member through homepage', () => {
     cy.xpath('//div[@class="season-dropdown dropdown"]/button').click();
     cy.get('.dropdown-menu.show > a:nth-child(2)').click();
     cy.get(
@@ -22,42 +22,25 @@ describe('Inviting a new member', () => {
     cy.xpath(
       '//div[contains(@id, "react-select")][contains(@id, "option")][1]'
     ).click();
-    cy.xpath('//input[contains(@id, "react-select")][contains(@id, "input")]')
+    cy.get('.modal-body > div.selector-wrapper > div > section > div > div > div > div:nth-child(2) > input')
       .type(faker.internet.email())
       .type('{enter}');
-    cy.get('.dropdown > #dropdown-basic').click();
-    cy.get('div.dropdown-menu.show > a:nth-child(2)')
-      .should('contain', 'User')
-      .click();
+    cy.get('#dropdown-basic').click()
+    cy.get('.dropdown-menu.show > a:last-child').should('contain', 'User').click()
     //2nd user
-    cy.get('.addAnotherUserBtn-extras').click();
-    cy.xpath(
-      '//div[@class="selector-wrapper false"]/div[last()]/section/div/div/div/div[2]/input'
-    )
-      .type(faker.internet.email())
-      .type('{enter}');
-    cy.get(
-      '.selector-wrapper > div:last-child > section > div:last-child > #dropdown-basic'
-    ).click();
-    cy.get('div.dropdown-menu.show > a:nth-child(3)')
-      .should('contain', 'Guest')
-      .click();
+    cy.get('.addAnotherUserBtn-extras').click()
+    cy.get('.selector-wrapper > div:nth-child(2) > section > div > div > div > div.react-select__input-container > input').type(faker.internet.email()).type('{enter}')
+    cy.get('.selector-wrapper > div:nth-child(2) > section > div:nth-child(2) > button').click()
+    cy.get('.dropdown-menu.show > a:first-child').should('contain', 'Admin').click()
     //3rd user
-    cy.get('.addAnotherUserBtn-extras').click();
-    cy.xpath(
-      '//div[@class="selector-wrapper false"]/div[last()]/section/div/div/div/div[2]/input'
-    )
-      .type(faker.internet.email())
-      .type('{enter}');
-    cy.get(
-      '.selector-wrapper > div:last-child > section > div:last-child > #dropdown-basic'
-    ).click();
-    cy.get('div.dropdown-menu.show > a:nth-child(1)')
-      .should('contain', 'Admin')
-      .click();
-    cy.get('.selector-wrapper-inner:nth-child(2) > button.btn-close').click();
-    cy.get('.pull-right').click();
-    cy.get('.modal-content').should('not.exist');
+    cy.get('.addAnotherUserBtn-extras').click()
+    cy.get('.selector-wrapper > div:nth-child(3) > section > div > div > div > div.react-select__input-container > input').type(faker.internet.email()).type('{enter}')
+    cy.get('.selector-wrapper > div:nth-child(3) > section > div:nth-child(2) > button').click()
+    cy.get('.dropdown-menu.show > a:last-child').should('contain', 'User').click()
+
+    cy.get('.selector-wrapper > div:nth-child(2) > button.btn-close').click()
+    cy.get('.submitBtn').click()
+    cy.get('.modal-content').should('not.exist')
   });
 
   it('invite members to space through space members table', () => {
@@ -85,8 +68,8 @@ describe('Inviting a new member', () => {
     cy.get(
       '.selector-wrapper > div:last-child > section > div:last-child > #dropdown-basic'
     ).click();
-    cy.get('div.dropdown-menu.show > a:nth-child(3)')
-      .should('contain', 'Guest')
+    cy.get('div.dropdown-menu.show > a:nth-child(2)')
+      .should('contain', 'User')
       .click();
     cy.get('.addAnotherUserBtn-extras').click();
     cy.xpath(
@@ -101,7 +84,7 @@ describe('Inviting a new member', () => {
       .should('contain', 'Admin')
       .click();
     cy.get('.selector-wrapper-inner:nth-child(2) > button.btn-close').click();
-    cy.get('.pull-right').click();
+    cy.get('.submitBtn').click();
     cy.get('.modal-content').should('not.exist');
   });
 });

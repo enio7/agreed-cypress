@@ -33,8 +33,8 @@ describe('Inviting a new member to workspace', () => {
     cy.get(
       '.selector-wrapper > div:last-child > section > div:last-child > #dropdown-basic'
     ).click();
-    cy.get('div.dropdown-menu.show > a:nth-child(3)')
-      .should('contain', 'Guest')
+    cy.get('div.dropdown-menu.show > a:nth-child(2)')
+      .should('contain', 'User')
       .click();
     //3rd user
     cy.get('.addAnotherUserBtn-extras').click();
@@ -50,7 +50,7 @@ describe('Inviting a new member to workspace', () => {
       .should('contain', 'Admin')
       .click();
     cy.get('.selector-wrapper-inner:nth-child(2) > button.btn-close').click();
-    cy.get('.pull-right').click();
+    cy.get('.submitBtn').click();
     cy.get('.modal-content').should('not.exist');
   });
 
@@ -79,8 +79,8 @@ describe('Inviting a new member to workspace', () => {
     cy.get(
       '.selector-wrapper > div:last-child > section > div:last-child > #dropdown-basic'
     ).click();
-    cy.get('div.dropdown-menu.show > a:nth-child(3)')
-      .should('contain', 'Guest')
+    cy.get('div.dropdown-menu.show > a:nth-child(2)')
+      .should('contain', 'User')
       .click();
     //3rd user
     cy.get('.addAnotherUserBtn-extras').click();
@@ -96,7 +96,7 @@ describe('Inviting a new member to workspace', () => {
       .should('contain', 'Admin')
       .click();
     cy.get('.selector-wrapper-inner:nth-child(2) > button.btn-close').click();
-    cy.get('.pull-right').click();
+    cy.get('.submitBtn').click();
     cy.get('.modal-content').should('not.exist');
   });
 });
