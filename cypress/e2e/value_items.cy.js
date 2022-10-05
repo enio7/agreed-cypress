@@ -10,7 +10,7 @@ describe('Idea values', () => {
     cy.wait(5000);
   });
 
-  it.skip('creating idea for value idea testing', () => {
+  it('creating idea for value idea testing', () => {
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
     cy.xpath('//div[@class="add-new-items-dropdown dropdown"]/button').click();
     cy.get(
@@ -29,7 +29,7 @@ describe('Idea values', () => {
       .click();
   });
 
-  it.skip('personnel value & archive', () => {
+  it('personnel value & archive', () => {
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
     cy.get('[data-number="0"]').click();
     cy.get('.page-tabs__tabs__tab--name').contains('Value').click();
@@ -59,7 +59,9 @@ describe('Idea values', () => {
       .last()
       .click();
     cy.get('[aria-label="Next Month"]').click();
-    cy.get('div[aria-label="Choose Saturday, August 27th, 2022"]').click();
+    cy.get(
+      '.react-datepicker__month > div:nth-child(4) > div:nth-child(3)'
+    ).click();
     cy.get(
       '[role="rowgroup"] > tr:last-child > td:nth-child(6) > div > div > div > div.email-dropdown-wrapper > div > input'
     )
@@ -71,12 +73,11 @@ describe('Idea values', () => {
     cy.get('[data-rownumber] > td:nth-child(7) > div > div > div')
       .last()
       .click();
-    cy.get(
-      '[data-rownumber] > td:nth-child(8) > div > div > div > div'
-    ).click();
+    cy.get('[data-rownumber] > td:nth-child(8) > div > div > button').click();
     cy.get('.minimenu > div:nth-child(3)').click();
     cy.get('.modal-footer > button:nth-child(1)').click();
-    cy.get('[data-rownumber] > td:nth-child(8) > div > div > div > div')
+    cy.wait(1000);
+    cy.get('table > tbody > tr > td:nth-child(8) > div > div > button > svg')
       .last()
       .click();
     cy.get('.minimenu > div:nth-child(3)').click();
@@ -115,7 +116,9 @@ describe('Idea values', () => {
       .last()
       .click();
     cy.get('[aria-label="Next Month"]').click();
-    cy.get('div[aria-label="Choose Saturday, August 27th, 2022"]').click();
+    cy.get(
+      '.react-datepicker__month > div:nth-child(4) > div:nth-child(3)'
+    ).click();
     cy.get('[data-rownumber] > td:nth-child(7) > div > div > div >div > input')
       .last()
       .type('enio');
@@ -169,7 +172,9 @@ describe('Idea values', () => {
       .last()
       .click();
     cy.get('[aria-label="Next Month"]').click();
-    cy.get('div[aria-label="Choose Saturday, August 27th, 2022"]').click();
+    cy.get(
+      '.react-datepicker__month > div:nth-child(4) > div:nth-child(3)'
+    ).click();
     cy.get(
       '[data-rownumber] > td:nth-child(7) > div > div > div > div > div > input'
     )
