@@ -1,7 +1,6 @@
 /// <reference types="cypress" />
 /// <reference types="cypress-xpath" />
 
-import { faker } from '@faker-js/faker';
 require('cypress-xpath');
 
 describe('Worksapce settings', () => {
@@ -15,5 +14,9 @@ describe('Worksapce settings', () => {
     cy.xpath('//div[contains(@class, "dropdown-menu show")]/a[contains(., "LIVE")]').click();
     cy.get('.sidebar > div:nth-child(4) > a').click();
     cy.get('.dashboard-page-container > div > div > div.text-container').should('be.visible');
+    cy.get('.link-container').click();
+    cy.wait(1000);
+    cy.get('.apexcharts-yaxis-texts-g > text:first-child > tspan').click();
+    cy.get('.top-ideas-container > h2').should('be.visible');
   });
 });
