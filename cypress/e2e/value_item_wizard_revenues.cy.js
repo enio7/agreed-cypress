@@ -11,6 +11,8 @@ describe('Value items Revenues', () => {
   });
 
   it('revenues value wizard', () => {
+    cy.get('.season-dropdown.dropdown > button').click();
+    cy.xpath('//div[contains(@class, "dropdown-menu show")]/a[contains(., "LIVE")]').click();
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
     cy.get('[data-number="0"]').click();
     cy.get('.page-tabs__tabs__tab--name').contains('Value').click();
@@ -26,24 +28,19 @@ describe('Value items Revenues', () => {
     cy.get('.nextBtn').click();
     cy.get('.form-control').type('20000');
     cy.get('.nextBtn').click();
-    cy.get(
-      'div:nth-child(1) > div > div > div > div > input'
-    ).click();
+    cy.get('div:nth-child(1) > div > div > div > div > input').click();
     cy.get('[aria-label="Next Month"]').click();
     cy.get('.react-datepicker__month > div:nth-child(3) > div:nth-child(2)').click();
-    cy.get(
-      'div:nth-child(2) > div > div > div > div > input'
-    ).click();
+    cy.get('div:nth-child(2) > div > div > div > div > input').click();
     cy.get('[aria-label="Next Month"]').click();
     cy.get('.react-datepicker__month > div:nth-child(3) > div:nth-child(2)').click();
     cy.get('.nextBtn').click();
     cy.get('.wizard__footer__wrapper > button:nth-child(1)').click();
     cy.get('.nextBtn').click();
-    cy.get('.react-select__input').click();
-    cy.get('.react-select__menu-list > div:nth-child(2)').click();
+    cy.get('.react-select__input').type(faker.internet.email()).type('{enter}');
     cy.get('.dropdown.custom-dropdown > button').click();
-    cy.get('.dropdown-menu.show > a:first-child').click();
+    cy.get('.dropdown-menu.show > a:first-child').click({ force: true });
     cy.get('.doneBtn').click();
-    // cy.contains('Idea revenue value item added successfully!').should('exist');
+    cy.contains('Idea position value item added successfully!').should('exist');
   });
 });
