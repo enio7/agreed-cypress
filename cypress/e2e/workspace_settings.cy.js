@@ -73,7 +73,7 @@ describe('Worksapce settings', () => {
     cy.contains('Amortization was changed successfully!').should('exist');
   });
 
-  it.skip('workspace tags', () => {
+  it('workspace tags', () => {
     cy.get('.season-dropdown.dropdown > button').click();
     cy.get('.dropdown-menu.show > a:nth-last-child(2)').click();
     cy.get('.profile-dropdown > button').click();

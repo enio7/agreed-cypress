@@ -25,7 +25,7 @@ describe('Guest Invites', () => {
     cy.get('.page-tabs__goBack > div > button').click();
   });
 
-  it('guest account login', () => {
+  it.skip('guest account login', () => {
     cy.visit('./login');
     cy.get('.form_input').type('enio+44@motomtech.com');
     cy.get('.form_input-password').type('Test@123');

@@ -31,7 +31,7 @@ describe('New event idea', () => {
     cy.contains('Idea submitted!').should('exist');
   });
 
-  it.skip('delete event idea', () => {
+  it('delete event idea', () => {
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
     cy.get('.page-tabs__tabs__tab--name').contains('Events').click();
     cy.get('.events-list__body > div:nth-child(1) > div.event-item > div > div:nth-child(2) > div > div > div > div.event-item__content').click();

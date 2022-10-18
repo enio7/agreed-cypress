@@ -10,7 +10,7 @@ describe('Value items wizard', () => {
     cy.wait(5000);
   });
 
-  it('personnel value wizard', () => {
+  it('personnel value wizard', { defaultCommandTimeout: 5000 }, () => {
     cy.get('.season-dropdown.dropdown > button').click();
     cy.xpath('//div[contains(@class, "dropdown-menu show")]/a[contains(., "LIVE")]').click();
     cy.wait(5000);
@@ -40,7 +40,7 @@ describe('Value items wizard', () => {
     cy.contains('Idea position value item added successfully!').should('exist');
   });
 
-  it('non-personnel value wizard', () => {
+  it('non-personnel value wizard', { defaultCommandTimeout: 5000 }, () => {
     cy.get('.season-dropdown.dropdown > button').click();
     cy.xpath('//div[contains(@class, "dropdown-menu show")]/a[contains(., "LIVE")]').click();
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();

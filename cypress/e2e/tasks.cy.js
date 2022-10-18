@@ -9,7 +9,7 @@ describe('Tasks', () => {
     cy.wait(5000);
   });
 
-  it('create a task', () => {
+  it.skip('create a task', () => {
     cy.get('.sidebar__spaces-list > li:nth-child(1) > a').click();
     cy.get('[data-number="0"]').click();
     cy.get('.right-sidebar__menu > div > div > div > svg').click();
@@ -23,7 +23,7 @@ describe('Tasks', () => {
     cy.get('.submitBtn').click();
   });
 
-  it('edit tasks', () => {
+  it.skip('edit tasks', () => {
     cy.get('.sidebar__spaces-list > li:nth-child(1) > a').click();
     cy.get('[data-number="0"]').click();
     cy.get('.right-sidebar__menu > div > div > div > svg').click();

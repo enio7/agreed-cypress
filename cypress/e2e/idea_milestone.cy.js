@@ -10,7 +10,7 @@ describe('Milestone', () => {
     cy.wait(5000);
   });
 
-  it('new milestone', { defaultCommandTimeout: 5000 }, () => {
+  it.skip('new milestone', { defaultCommandTimeout: 5000 }, () => {
     cy.get('.season-dropdown.dropdown > button').click();
     cy.xpath('//div[contains(@class, "dropdown-menu show")]/a[contains(., "LIVE")]').click();
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();

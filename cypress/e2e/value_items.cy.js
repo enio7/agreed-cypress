@@ -119,7 +119,7 @@ describe('Idea values', () => {
     cy.get('.section__body > ul > li:nth-child(3)').click();
     cy.wait(1000);
     cy.get('.modal-footer > button:nth-child(1)').click();
-    cy.get('[data-rownumber] > td:nth-child(9) > div > div > div').click();
+    cy.get('[data-rownumber] > td:nth-child(9) > div > div > div').click({ force: true });
     cy.get('.table-wrapper > div > table > tbody > tr > td:nth-child(10) > div > div > button').click();
     cy.get('.show.dropdown-menu > a:nth-child(3)').click();
     cy.get('.modal-footer > button:nth-child(2)').click();

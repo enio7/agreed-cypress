@@ -10,7 +10,7 @@ describe('Idea value drawers', () => {
     cy.wait(5000);
   });
 
-  it.skip('personnel item drawer', () => {
+  it('personnel item drawer', () => {
     cy.get('.season-dropdown.dropdown > button').click();
     cy.xpath('//div[contains(@class, "dropdown-menu show")]/a[contains(., "LIVE")]').click();
     cy.get(':nth-child(2) > a > .nav-item > .nav-link').click();
