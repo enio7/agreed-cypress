@@ -17,6 +17,7 @@ describe('Log Out from non active workspace', () => {
   it('choose other workspaces', () => {
     cy.get('.season-dropdown > button').click();
     cy.get('.add-workspace').click();
+    cy.wait(3000);
     cy.get('.join-workspaces-list > div:nth-last-child(3) > div > div > input').click();
     cy.get('.join-workspaces-list > div:nth-last-child(4) > div > div > input').click();
     cy.get('.join-workspaces-list > div:nth-last-child(3) > div > div > input').click();

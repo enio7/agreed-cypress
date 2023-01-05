@@ -11,10 +11,12 @@ describe('Create new Workspace', () => {
     cy.wait(5000);
   });
 
-  it('new workspace', () => {
+  it('new workspace', { defaultCommandTimeout: 5000 }, () => {
     cy.xpath('//div[@class="season-dropdown dropdown"]/button').click();
     cy.xpath('//p[contains(text(), "Add Workspace")]').click();
+    cy.wait(3000);
     cy.get('.create-workspace-btn').click();
+    cy.wait(2500);
     cy.get('.form-control').type(faker.lorem.words());
     cy.get('.create-workspace-submiter').click();
     cy.get('.react-select__input').type(faker.internet.email()).type('{enter}');

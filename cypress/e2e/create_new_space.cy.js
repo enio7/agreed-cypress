@@ -41,6 +41,7 @@ describe('Create new spaces', () => {
     cy.get('a:nth-child(2) > div > div > div.profile-dropdown-item-info').click();
     cy.get('[href="/admin/spaces"] > .page-tabs__tabs__tab > .page-tabs__tabs__tab--name').click();
     cy.get('.add-new-members').click();
+    cy.wait(3000);
     cy.get('[placeholder="Ex. Marketing"]').type(faker.company.companyName());
     cy.get('[placeholder="Add Description"]').type(faker.lorem.sentences());
     cy.get('.react-select__input').type(faker.internet.email()).type('{enter}');

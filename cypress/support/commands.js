@@ -19,7 +19,7 @@ import 'cypress-file-upload';
 
 Cypress.Commands.add('login', () => {
   cy.visit('/login');
-  cy.get('.form_input').type('enio+33@motomtech.com');
+  cy.get('.form_input').type('enio@uptechshpk.com');
   cy.get('.form_input-password').type('Test@123');
   cy.get('.visibility-icon > .w-100 > svg').click();
   cy.get('.login_form-section-form_button').click();
@@ -35,7 +35,7 @@ Cypress.Commands.add('getAndSetToken', () => {
     url: '/login',
     failOnStatusCode: false,
     body: {
-      email: 'enio+33@motomtech.com',
+      email: 'enio@uptechshpk.com',
       password: 'Test@123',
     },
   }).then((resp) => {

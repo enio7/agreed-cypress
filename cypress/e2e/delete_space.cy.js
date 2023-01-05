@@ -17,13 +17,14 @@ describe('Delete a space', () => {
     cy.xpath('//tbody[@role="rowgroup"]/tr[last()]/td[5]/div/div/div/button').click();
     cy.xpath('//div[@class="dropdown-menu show dropdown-menu-end"]/a[4]/div').click();
     cy.xpath('//button[@class="btn btn-secondary"]').click();
+    cy.wait(3000);
     cy.xpath('//tbody[@role="rowgroup"]/tr[last()]/td[5]/div/div/div/button').click();
     cy.xpath('//div[@class="dropdown-menu show dropdown-menu-end"]/a[5]/div').click();
     cy.get('.leaveBtn').click();
     cy.contains('Space successfully deleted!').should('exist');
   });
 
-  it('delete a space from space settings', () => {
+  it('delete a space from space settings', { defaultCommandTimeout: 5000 }, () => {
     cy.get('.season-dropdown.dropdown > button').click();
     cy.xpath('//div[contains(@class, "dropdown-menu show")]/a[contains(., "LIVE")]').click();
     cy.xpath('//ul[@class="sidebar__spaces-list"]/li[last()]').click();

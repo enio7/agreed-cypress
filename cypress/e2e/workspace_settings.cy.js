@@ -80,11 +80,11 @@ describe('Worksapce settings', () => {
     cy.get('.dropdown-menu.show > a:nth-child(3)').click();
     cy.get('.workspace-settings-accordion > div:nth-child(7)').click();
     //Tags name
-    // cy.get('.edit-tags-section > div:nth-child(1) > div.edit-item-content >form > input').clear().type(faker.finance.currencyName());
-    // cy.get('.edit-tags-section > div:nth-child(1)').click();
-    // cy.contains('Updated Workspace Tags Title!').should('exist');
-    // // Tags
-    // cy.get('.agreed-tags-textarea__input').type(faker.vehicle.manufacturer()).type('{enter}');
+    cy.get('.edit-tags-section > div:nth-child(1) > div.edit-item-content >form > input').clear().type(faker.finance.currencyName());
+    cy.get('.edit-tags-section > div:nth-child(1)').click();
+    cy.contains('Updated Workspace Tags Title!').should('exist');
+    // Tags
+    cy.get('.agreed-tags-textarea__input').type(faker.vehicle.manufacturer()).type('{enter}');
     cy.get('.workspace-tag:first-child > .agreed-tooltip-content-container').trigger('mouseover');
     cy.get('.workspace-tag:first-child > div.agreed-tag-action-dropdown.dropdown').invoke('show');
     //cy.get('.workspace-tag:first-child > div.agreed-tag-action-dropdown > button').click();

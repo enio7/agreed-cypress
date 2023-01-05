@@ -20,8 +20,9 @@ describe('Add a event', () => {
     cy.get('.event-form-page').click();
     cy.get('.members-dropdown > div > div > div > input').click();
     cy.get('.react-select__option:nth-child(1)').click();
+    cy.get('.members-dropdown > div > div > div > input').type(faker.internet.email());
     cy.get('.react-select__option:nth-child(1)').click();
-    cy.get('.members-dropdown > div > div > div:nth-child(2) > div.react-select__multi-value__remove').click();
+    cy.get('.hostings-dropdown > div > div > div:nth-child(2) > div.react-select__multi-value__remove').click();
     cy.get('.spaces-page').click();
     cy.get('.form-group:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div > div > input').click();
     cy.get('[aria-label="Next Month"]').click();
@@ -46,6 +47,7 @@ describe('Add a event', () => {
     cy.get('.event-form-page').click();
     cy.get('.members-dropdown > div > div > div > input').click();
     cy.get('.react-select__option:nth-child(1)').click();
+    cy.get('.members-dropdown > div > div > div > input').type(faker.internet.email());
     cy.get('.react-select__option:nth-child(1)').click();
     cy.get('.members-dropdown > div > div > div:nth-child(2) > div.react-select__multi-value__remove').click();
     cy.get('.spaces-page').click();
@@ -74,8 +76,9 @@ describe('Add a event', () => {
     cy.get('.event-form-page').click();
     cy.get('.members-dropdown > div > div > div > input').click();
     cy.get('.react-select__option:nth-child(1)').click();
+    cy.get('.members-dropdown > div > div > div > input').type(faker.internet.email());
     cy.get('.react-select__option:nth-child(1)').click();
-    cy.get('.members-dropdown > div > div > div:nth-child(2) > div.react-select__multi-value__remove').click();
+    cy.get('.hostings-dropdown > div > div > div:nth-child(2) > div.react-select__multi-value__remove').click();
     cy.get('.spaces-page').click();
     cy.get('.form-group:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div > div > input').click();
     cy.get('[aria-label="Next Month"]').click();
