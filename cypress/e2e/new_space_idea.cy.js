@@ -41,8 +41,8 @@ describe('Create a new idea', () => {
     cy.contains('Idea created successfully!').should('exist');
   });
 
-  it.skip('idea is created', () => {
-    cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
-    cy.get('[data-number="0"] > .idea-card').should('contain', 'Automated Test').and('contain', '$25K').and('contain', 'medium');
-  });
+  // it('idea is created', () => {
+  //   cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
+  //   cy.get('[data-number="0"] > .idea-card').should('contain', 'Automated Test').and('contain', '$25K').and('contain', 'medium');
+  // });
 });

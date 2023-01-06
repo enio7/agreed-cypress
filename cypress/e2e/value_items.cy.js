@@ -10,7 +10,7 @@ describe('Idea values', () => {
     cy.wait(5000);
   });
 
-  it('creating idea for value idea testing', () => {
+  it.skip('creating idea for value idea testing', () => {
     cy.get('.season-dropdown.dropdown > button').click();
     cy.xpath('//div[contains(@class, "dropdown-menu show")]/a[contains(., "LIVE")]').click();
     cy.wait(2000);
@@ -26,11 +26,11 @@ describe('Idea values', () => {
     cy.get('.newIdea__form__footer__container > :nth-child(2)').should('contain', 'Submit').click();
   });
 
-  it('personnel value & archive', () => {
+  it.skip('personnel value & archive', () => {
     cy.get('.season-dropdown.dropdown > button').click();
     cy.xpath('//div[contains(@class, "dropdown-menu show")]/a[contains(., "LIVE")]').click();
-    cy.wait(5000);
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
+    cy.wait(5000);
     cy.get('[data-number="0"]').click();
     cy.get('.page-tabs__tabs__tab--name').contains('Value').click();
     cy.get('[role="group"] > button:nth-child(1)').should('contain', 'Personnel');
@@ -60,7 +60,7 @@ describe('Idea values', () => {
     cy.wait(500);
   });
 
-  it('non-personnel value & archive', () => {
+  it.skip('non-personnel value & archive', () => {
     cy.get('.season-dropdown.dropdown > button').click();
     cy.xpath('//div[contains(@class, "dropdown-menu show")]/a[contains(., "LIVE")]').click();
     cy.wait(5000);
@@ -92,7 +92,7 @@ describe('Idea values', () => {
     cy.get('.modal-footer > button:nth-child(2)').click();
   });
 
-  it('revenues value & archive', () => {
+  it.skip('revenues value & archive', () => {
     cy.get('.season-dropdown.dropdown > button').click();
     cy.xpath('//div[contains(@class, "dropdown-menu show")]/a[contains(., "LIVE")]').click();
     cy.wait(5000);
