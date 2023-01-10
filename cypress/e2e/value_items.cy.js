@@ -10,7 +10,7 @@ describe('Idea values', () => {
     cy.wait(5000);
   });
 
-  it.skip('creating idea for value idea testing', () => {
+  it('creating idea for value idea testing', () => {
     cy.get('.season-dropdown.dropdown > button').click();
     cy.xpath('//div[contains(@class, "dropdown-menu show")]/a[contains(., "LIVE")]').click();
     cy.wait(2000);
@@ -26,14 +26,15 @@ describe('Idea values', () => {
     cy.get('.newIdea__form__footer__container > :nth-child(2)').should('contain', 'Submit').click();
   });
 
-  it.skip('personnel value & archive', () => {
+  it('personnel value & archive', () => {
     cy.get('.season-dropdown.dropdown > button').click();
     cy.xpath('//div[contains(@class, "dropdown-menu show")]/a[contains(., "LIVE")]').click();
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
     cy.wait(5000);
     cy.get('[data-number="0"]').click();
     cy.get('.page-tabs__tabs__tab--name').contains('Value').click();
-    cy.get('[role="group"] > button:nth-child(1)').should('contain', 'Personnel');
+    cy.get('div.opportunity-table-sections > div:nth-child(1) > div > div:nth-child(2)').click();
+    cy.get('div.opportunity-table-sections > div:nth-child(1) > div > div:nth-child(2) > div > div:nth-child(1)').should('contain', 'Personnel');
     cy.get('.empty-state > button').click();
     cy.get('[data-rownumber] > td > div > input').type('personnel automated');
     cy.get('[data-rownumber] > td:nth-child(2) > div > div > div > div:nth-child(1)').click();
@@ -49,6 +50,7 @@ describe('Idea values', () => {
     cy.get('.section__body > ul > li:nth-child(3)').click();
     cy.wait(1000);
     cy.get('.modal-footer > button:nth-child(2)').click();
+    cy.wait(2000);
     cy.get('[data-rownumber] > td:nth-child(7) > div > div > div').click();
     cy.get('.table-wrapper > div > table > tbody > tr > td:nth-child(8) > div > div > button').click();
     cy.get('.show.dropdown-menu > a:nth-child(3)').click();
@@ -60,14 +62,16 @@ describe('Idea values', () => {
     cy.wait(500);
   });
 
-  it.skip('non-personnel value & archive', () => {
+  it('non-personnel value & archive', () => {
     cy.get('.season-dropdown.dropdown > button').click();
     cy.xpath('//div[contains(@class, "dropdown-menu show")]/a[contains(., "LIVE")]').click();
-    cy.wait(5000);
+    cy.wait(2000);
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
+    cy.wait(2000);
     cy.get('[data-number="0"]').click();
     cy.get('.page-tabs__tabs__tab--name').contains('Value').click();
-    cy.get('[role="group"] > button:nth-child(2)').should('contain', 'Non-Personnel').click();
+    cy.get('div.opportunity-table-sections > div:nth-child(1) > div > div:nth-child(3)').click();
+    cy.get('div.opportunity-table-sections > div:nth-child(1) > div > div:nth-child(3) > div > div:nth-child(1)').should('contain', 'Non-Personnel');
     cy.get('.empty-state > button').click();
     cy.wait(1000);
     cy.get('[data-rownumber] > td > div > input').last().type('non-personnel automated');
@@ -92,14 +96,16 @@ describe('Idea values', () => {
     cy.get('.modal-footer > button:nth-child(2)').click();
   });
 
-  it.skip('revenues value & archive', () => {
+  it('revenues value & archive', () => {
     cy.get('.season-dropdown.dropdown > button').click();
     cy.xpath('//div[contains(@class, "dropdown-menu show")]/a[contains(., "LIVE")]').click();
-    cy.wait(5000);
+    cy.wait(2000);
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
+    cy.wait(3000);
     cy.get('[data-number="0"]').click();
     cy.get('.page-tabs__tabs__tab--name').contains('Value').click();
-    cy.get('[role="group"] > button:nth-child(3)').should('contain', 'Revenues').click();
+    cy.get('div.opportunity-table-sections > div:nth-child(1) > div > div:nth-child(4)').click();
+    cy.get('div.opportunity-table-sections > div:nth-child(1) > div > div:nth-child(4) > div > div:nth-child(1)').should('contain', 'Revenues');
     cy.get('.empty-state > button').click();
     cy.get('[data-rownumber] > td > div > input').type('revenues automated');
     cy.get('[data-rownumber] > td:nth-child(2) > div > div > div > div:nth-child(2)').click();
@@ -119,7 +125,8 @@ describe('Idea values', () => {
     cy.get('.section__body > ul > li:nth-child(3)').click();
     cy.wait(1000);
     cy.get('.modal-footer > button:nth-child(1)').click();
-    cy.get('[data-rownumber] > td:nth-child(9) > div > div > div').click({ force: true });
+    cy.wait(2000);
+    cy.get('[data-rownumber] > td:nth-child(9) > div > div > div').click();
     cy.get('.table-wrapper > div > table > tbody > tr > td:nth-child(10) > div > div > button').click();
     cy.get('.show.dropdown-menu > a:nth-child(3)').click();
     cy.get('.modal-footer > button:nth-child(2)').click();
