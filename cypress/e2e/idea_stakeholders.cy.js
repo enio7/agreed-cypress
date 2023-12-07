@@ -45,35 +45,20 @@ describe('Invite and Remove a stakeholder', () => {
 
   it('rate and edit stakeholders', () => {
     cy.get(':nth-child(1) > a > .nav-item > .nav-link').click();
+    cy.wait(2000);
     cy.get('[data-number="0"]').click();
     cy.get('.page-tabs__tabs__tab--name').contains('Risk').click();
-    cy.get(
-      'div[data-rownumber="0"] > div.idea__risk__stakeholder__ratings > div > div > button'
-    ).click();
-    cy.get(
-      'div[data-rownumber="0"] > div.idea__risk__stakeholder__ratings > div > div > div > a > div > div.low-risk'
-    ).click();
-    cy.get(
-      'div[data-rownumber="1"] > div.idea__risk__stakeholder__ratings > div > div > button'
-    ).click();
-    cy.get(
-      'div[data-rownumber="1"] > div.idea__risk__stakeholder__ratings > div > div > div > a > div > div.medium-risk'
-    ).click();
-    cy.get(
-      'div[data-rownumber="2"] > div.idea__risk__stakeholder__ratings > div > div > button'
-    ).click();
-    cy.get(
-      'div[data-rownumber="2"] > div.idea__risk__stakeholder__ratings > div > div > div > a > div > div.high-risk'
-    ).click();
+    cy.get('div[data-rownumber="0"] > div.idea__risk__stakeholder__ratings > div > div > button').click();
+    cy.get('div[data-rownumber="0"] > div.idea__risk__stakeholder__ratings > div > div > div > a > div > div.low-risk').click();
+    cy.get('div[data-rownumber="1"] > div.idea__risk__stakeholder__ratings > div > div > button').click();
+    cy.get('div[data-rownumber="1"] > div.idea__risk__stakeholder__ratings > div > div > div > a > div > div.medium-risk').click();
+    cy.get('div[data-rownumber="2"] > div.idea__risk__stakeholder__ratings > div > div > button').click();
+    cy.get('div[data-rownumber="2"] > div.idea__risk__stakeholder__ratings > div > div > div > a > div > div.high-risk').click();
     cy.contains('Rating updated').should('exist');
     cy.wait(2000);
-    cy.get(
-      'div[data-rownumber="1"] > div.idea__risk__stakeholder__textarea > textarea.textarea__input'
-    ).type(faker.lorem.words());
+    cy.get('div[data-rownumber="1"] > div.idea__risk__stakeholder__textarea > textarea.textarea__input').type(faker.lorem.words());
     //cy.contains('Requested changes updated successfully!').should('exist');
-    cy.get(
-      'div[data-rownumber="1"] > div.idea__risk__stakeholder__completion > div > div > input'
-    ).click();
+    cy.get('div[data-rownumber="1"] > div.idea__risk__stakeholder__completion > div > div > input').click();
     cy.get('.idea__risk__stakeholder__toggle > button').click();
     cy.get('.idea__risk__stakeholder__toggle > div > a:nth-child(2)').click();
     cy.get('.rateSelect__input > button > div').should('contain', 'high');
@@ -83,12 +68,10 @@ describe('Invite and Remove a stakeholder', () => {
     cy.get('.idea__risk__stakeholder__toggle > button').click();
     cy.get('.idea__risk__stakeholder__toggle > div > a:nth-child(4)').click();
     cy.get('.rateSelect__input > button > div').should('contain', 'low');
-    cy.wait(3000)
+    cy.wait(3000);
     cy.get('.idea__risk__stakeholder__toggle > button').click();
     cy.get('.idea__risk__stakeholder__toggle > div > a:nth-child(1)').click();
     cy.get('.idea__risk__body > div[data-rownumber="0"]').trigger('mouseover');
-    cy.get(
-      '[data-rownumber="0"] > div:nth-child(5) > div > div > button'
-    ).invoke('show').click({force: true});
+    cy.get('[data-rownumber="0"] > div:nth-child(5) > div > div > button').invoke('show').click({ force: true });
   });
 });

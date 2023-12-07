@@ -11,7 +11,7 @@ describe('Create new Workspace', () => {
     cy.wait(5000);
   });
 
-  it('new workspace', { defaultCommandTimeout: 5000 }, () => {
+  it('new workspace', () => {
     cy.xpath('//div[@class="season-dropdown dropdown"]/button').click();
     cy.xpath('//p[contains(text(), "Add Workspace")]').click();
     cy.wait(3000);

@@ -33,8 +33,8 @@ describe('Idea values', () => {
     cy.wait(5000);
     cy.get('[data-number="0"]').click();
     cy.get('.page-tabs__tabs__tab--name').contains('Value').click();
-    cy.get('div.opportunity-table-sections > div:nth-child(1) > div > div:nth-child(2)').click();
-    cy.get('div.opportunity-table-sections > div:nth-child(1) > div > div:nth-child(2) > div > div:nth-child(1)').should('contain', 'Personnel');
+    cy.get('div.opportunity-table-sections > div:nth-child(1) > div > div:nth-child(3)').click();
+    cy.get('div.opportunity-table-sections > div:nth-child(1) > div > div:nth-child(3) > div > div:nth-child(1)').should('contain', 'Personnel');
     cy.get('.empty-state > button').click();
     cy.get('[data-rownumber] > td > div > input').type('personnel automated');
     cy.get('[data-rownumber] > td:nth-child(2) > div > div > div > div:nth-child(1)').click();

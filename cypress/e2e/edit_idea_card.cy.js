@@ -20,7 +20,7 @@ describe('idea chat', () => {
     cy.get('.dropdown-menu.show > a:nth-child(1)').click();
     //edit description
     cy.get('.editIdeaDescription__wrapper__inner > div.idea__titleAndDesc:nth-child(1) > input').clear().type(faker.commerce.productDescription());
-    cy.get('.editIdeaDescription__wrapper__inner > div.idea__titleAndDesc:nth-child(2) > textarea').clear().type(faker.lorem.paragraph());
+    cy.get('.editIdeaDescription__wrapper__inner > div.idea__titleAndDesc:nth-child(2) > div > textarea').clear().type(faker.lorem.paragraph());
     //select phase
     cy.get('.idea__selectPhase > div.phases__container > button:nth-child(3)').click();
     cy.get('.submitBtn').click();
@@ -39,11 +39,12 @@ describe('idea chat', () => {
     //idea tags
     cy.wait(1500);
     cy.get('.idea__tags__container > div > div > div > div.agreed-tags-textarea__input-container > input').type(faker.vehicle.vehicle());
-    cy.get('.agreed-tags-textarea_menu > div').click();
+    cy.xpath('//div[contains(@id, "react-select")][contains(@id, "option")][1]').click();
     cy.contains('Tag added successfully!').should('exist');
-    cy.get('.idea__tags__container > div > div > div > div:nth-child(1) > div.agreed-tag-action-dropdown').trigger('mouseover');
+    cy.get('.agreed-tag.default-tag').trigger('mouseover');
     cy.get('.idea__tags__container > div > div > div > div:nth-child(1) > div.agreed-tag-action-dropdown > button')
       .invoke('show')
       .click({ force: true });
+    cy.get('.fade.show.dropdown-menu.dropdown-menu-end > a:nth-child(2)').click();
   });
 });
